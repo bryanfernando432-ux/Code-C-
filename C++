@@ -1,0 +1,63 @@
+#include <iostream>
+#include <windows.h>  
+
+using namespace std;
+
+void printNumbers() {
+  cout << "1. Numbers 1 to 10:" << endl;
+  for (int i = 1; i <= 10; i++) {
+    cout << i << endl;
+  }
+}
+
+
+void checkEvenOdd(int number) {
+  cout << "2. Even or odd:" << endl;
+  cout << number;
+  if (number % 2 == 0) {
+    cout << " is Even" << endl;
+  } else {
+    cout << " is Odd" << endl;
+  }
+}
+
+
+void greet() {
+  cout << "3. Greeting:" << endl;
+  cout << "Hello Arduino!" << endl;
+}
+
+
+int numbers[5] = {10, 20, 30, 40, 50};
+
+void printArray() {
+  cout << "4. Array values:" << endl;
+  for (int i = 0; i < 5; i++) {
+    cout << numbers[i] << endl;
+  }
+}
+
+bool state = false;
+
+int main() {
+  printNumbers();
+  checkEvenOdd(7);
+  greet();
+  printArray();
+
+  cout << "5. Toggling ON/OFF:" << endl;
+  for (int i = 0; i < 6; i++) {  
+    state = !state;
+
+    if (state) {
+      cout << "ON" << endl;
+    } else {
+      cout << "OFF" << endl;
+    }
+
+    Sleep(1000);                  
+  }
+
+  system("pause");                
+  return 0;
+}
